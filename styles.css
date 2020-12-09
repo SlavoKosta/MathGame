@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+.boxes {
+    display: flex;
+    /*border: 1px solid #c7c7c7;
+    border-right: none;*/
+    border-top: 1px solid #c7c7c7;
+}
+
+.box {
+    height: 10px;
+    /*border-right: 1px solid #c7c7c7;*/
+    flex: 1;
+}
+
+.progress {
+    position: relative;
+}
+
+.progress-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #7ecc00;
+    opacity: 0.57;
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: transfrom 0.4s ease-out;
+}
+
+.progress-wrong {
+    position: relative;
+}
+
+.progress-wrong-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    opacity: 0.82;
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: transfrom 0.4s ease-out;
+}
+
+.boxes-wrong {
+    display: flex;
+    /*border: 1px solid #c7c7c7;
+    border-right: none;*/
+    border-top: 1px solid #c7c7c7;
+}
+
+.box-wrong {
+    height: 15px;
+    /*border-right: 1px solid #c7c7c7;*/
+    flex: 1;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255,255,255,0.82);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.33s ease-out;
+    transform: scale(1.2);
+    font-size: 3rem;
+}
+
+body.overlay-is-open .overlay {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+}
+
+body.overlay-is-open .main-ui {
+    filter: blur(4px);
+}
+
+@keyframes showError {
+    50% {
+        color: red;
+        transform: scale(1.2);
+    }
+
+    100% {
+        color: #333;
+        transform: scale(1.0);
+    }
+}
+
+.animate-wrong {
+    /*color: red;*/
+    animation: 0.45s showError;
+}
+
+.problem {
+    text-align: center;
+    font-size: 5rem;
+    margin: 0;
+}
+
+.our-form {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.status {
+    text-align: center;
+}
+
+.points-needed {
+    font-size: 1.2rem;
+}
+
+.mistakes-allowed {
+    font-size: 1.2rem;
+    color: red;
+}
+
+.reset-button {
+    font-size: 1.2rem;
+    border: none;
+    color: #FFF;
+    border-radius: 7px;
+    padding: 12px 20px;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+  }
